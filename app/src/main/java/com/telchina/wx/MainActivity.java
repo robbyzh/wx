@@ -59,6 +59,9 @@ public class MainActivity extends FragmentActivity implements
         mViewPager.setOnPageChangeListener(this);
     }
 
+    /**
+     * 初始化四个自定义view
+     */
     private void initView() {
         mViewPager = (ViewPager) findViewById(R.id.id_viewpager);
 
@@ -77,7 +80,7 @@ public class MainActivity extends FragmentActivity implements
         three.setOnClickListener(this);
         four.setOnClickListener(this);
 
-        one.setIconAlpha(1.0f);
+        one.setIconAlpha(1.0f); //第一个view的透明度  不透明
     }
 
     private void initDatas() {

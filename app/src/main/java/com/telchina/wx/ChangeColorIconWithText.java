@@ -16,6 +16,9 @@ import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.View;
 
+/**
+ * 自定义view类
+ */
 public class ChangeColorIconWithText extends View {
 
     private int mColor = 0xffe;
@@ -120,6 +123,7 @@ public class ChangeColorIconWithText extends View {
         canvas.drawBitmap(mBitmap, 0, 0, null);
     }
 
+    //绘制移动tab时的目标文本
     private void drawTargetText(Canvas canvas, int alpah) {
 
         mTextPaint.setColor(mColor);
@@ -131,6 +135,7 @@ public class ChangeColorIconWithText extends View {
         canvas.drawText(mText, x, y, mTextPaint);
     }
 
+    //绘制移动时的源文本
     private void drawSourceText(Canvas canvas, int alpah) {
 
         mTextPaint.setColor(0xff333333);
@@ -140,9 +145,12 @@ public class ChangeColorIconWithText extends View {
         int y = mIconRect.bottom + mTextBound.height();
 
         canvas.drawText(mText, x, y, mTextPaint);
-
     }
 
+    /**
+     * 绘制目标图像
+     * @param alpha
+     */
     private void setupTargetBitmap(int alpha) {
 
         mBitmap = Bitmap.createBitmap(getMeasuredWidth(),
@@ -162,12 +170,19 @@ public class ChangeColorIconWithText extends View {
         mCanvas.drawBitmap(mIconBitMap, null, mIconRect, mPaint);
     }
 
+    /**
+     * 外部接口，用于在滑动tab的时候设置view的透明度，来实现图像和问题变色
+     * @param alpha
+     */
     public void setIconAlpha(float alpha) {
 
         this.mAlpha = alpha;
         invalidateView();
     }
 
+    /**
+     * 重绘方法
+     */
     private void invalidateView() {
         if (Looper.getMainLooper() == Looper.myLooper()) {
             invalidate();
@@ -175,6 +190,7 @@ public class ChangeColorIconWithText extends View {
             postInvalidate();
         }
     }
+
 
     @Override
     protected Parcelable onSaveInstanceState() {
