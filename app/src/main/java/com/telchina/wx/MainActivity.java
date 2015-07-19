@@ -1,5 +1,6 @@
 package com.telchina.wx;
 
+import android.graphics.Color;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -23,7 +24,7 @@ public class MainActivity extends FragmentActivity implements
 
 
     private ViewPager mViewPager;
-    private List<Fragment> mTabs = new ArrayList<Fragment>();
+    private List<Fragment> mTabs = new ArrayList<>();
 
     private String[] mTitles = new String[]{
             "第1个Fragment",
@@ -84,11 +85,14 @@ public class MainActivity extends FragmentActivity implements
     }
 
     private void initDatas() {
+        int i=0;
         for (String title : mTitles) {
+
             TabFragment tabFragment = new TabFragment();
 
             Bundle bundle = new Bundle();
             bundle.putString(TabFragment.TITLE, title);
+            bundle.putInt(TabFragment.INDEX,i++);
 
             tabFragment.setArguments(bundle);
             mTabs.add(tabFragment);
@@ -170,22 +174,22 @@ public class MainActivity extends FragmentActivity implements
 
             case R.id.id_indicator_one:
                 mTabIndicators.get(FIRST_VIEW).setIconAlpha(1.0f);
-                mViewPager.setCurrentItem(FIRST_VIEW, false);
+                mViewPager.setCurrentItem(FIRST_VIEW, true);
                 break;
 
             case R.id.id_indicator_two:
                 mTabIndicators.get(SECOND_VIEW).setIconAlpha(1.0f);
-                mViewPager.setCurrentItem(SECOND_VIEW, false);
+                mViewPager.setCurrentItem(SECOND_VIEW, true);
                 break;
 
             case R.id.id_indicator_three:
                 mTabIndicators.get(THIRD_VIEW).setIconAlpha(1.0f);
-                mViewPager.setCurrentItem(THIRD_VIEW, false);
+                mViewPager.setCurrentItem(THIRD_VIEW, true);
                 break;
 
             case R.id.id_indicator_four:
                 mTabIndicators.get(FORTH_VIEW).setIconAlpha(1.0f);
-                mViewPager.setCurrentItem(FORTH_VIEW, false);
+                mViewPager.setCurrentItem(FORTH_VIEW, true);
                 break;
         }
     }

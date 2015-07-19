@@ -15,8 +15,10 @@ import android.widget.TextView;
 public class TabFragment extends Fragment {
 
     private String mTitle = "Default";
+    private int mIndex    = 0;
 
     public static final String TITLE = "title";
+    public static final String INDEX = "index";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -25,16 +27,25 @@ public class TabFragment extends Fragment {
         //获取参数
         if (getArguments() != null) {
             mTitle = getArguments().getString(TITLE);
+            mIndex = getArguments().getInt(INDEX,0);
         }
 
-        //创建一个TextView
-        TextView tv = new TextView(getActivity());
-        tv.setTextSize(30);
-        tv.setBackgroundColor(Color.parseColor("#ffffffff"));
-        tv.setText(mTitle);
-        tv.setGravity(Gravity.CENTER);
+        //第四个标签页显示MyView
+        if(mIndex==0){
+            MyView view=new MyView(getActivity());
 
-        return tv;
+            return view;
+        }else{
+            //创建一个TextView
+            TextView tv = new TextView(getActivity());
+            tv.setTextSize(30);
+            tv.setBackgroundColor(Color.parseColor("#ffffffff"));
+            tv.setText(mTitle + "  序号:" + mIndex);
+            tv.setGravity(Gravity.CENTER);
+            tv.setBackgroundColor(Color.GREEN);
+
+            tv.setHeight(60);
+            return tv;
+        }
     }
-
 }

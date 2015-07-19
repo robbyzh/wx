@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
@@ -21,22 +22,22 @@ import android.view.View;
  */
 public class ChangeColorIconWithText extends View {
 
-    private int mColor = 0xffe;
-    private Bitmap mIconBitMap;
-    private String mText;
-    private int mTextSize = (int) TypedValue.applyDimension(
+    private int         mColor = 0xffe;
+    private Bitmap      mIconBitMap;
+    private String      mText;
+    private int         mTextSize = (int) TypedValue.applyDimension(
             TypedValue.COMPLEX_UNIT_SP, 12, getResources().getDisplayMetrics());
 
-    private Canvas mCanvas;
-    private Bitmap mBitmap;
-    private Paint mPaint;
+    private Canvas      mCanvas;
+    private Bitmap      mBitmap;
+    private Paint       mPaint;
 
-    private float mAlpha;
+    private float       mAlpha;
 
-    private Rect mIconRect;
-    private Rect mTextBound;
+    private Rect        mIconRect;
+    private Rect        mTextBound;
 
-    private Paint mTextPaint;
+    private Paint               mTextPaint;
 
     private static final String INSTANCE_STATUS = "instance_status";
     private static final String STATUS_ALPHA = "status_alhpa";
@@ -138,8 +139,8 @@ public class ChangeColorIconWithText extends View {
     //绘制移动时的源文本
     private void drawSourceText(Canvas canvas, int alpah) {
 
-        mTextPaint.setColor(0xff333333);
-        mTextPaint.setAlpha(255 - alpah);
+        mTextPaint.setColor(Color.GRAY);
+        //mTextPaint.setAlpha(255 - alpah);
 
         int x = getMeasuredWidth() / 2 - mTextBound.width() / 2;
         int y = mIconRect.bottom + mTextBound.height();
