@@ -190,6 +190,8 @@ public class ChangeColorIconWithText extends View {
         } else {
             postInvalidate();
         }
+
+        invalidate();
     }
 
 

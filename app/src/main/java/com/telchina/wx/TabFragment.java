@@ -39,10 +39,9 @@ public class TabFragment extends Fragment {
             //创建一个TextView
             TextView tv = new TextView(getActivity());
             tv.setTextSize(30);
-            tv.setBackgroundColor(Color.parseColor("#ffffffff"));
+            tv.setBackgroundColor(Color.LTGRAY);
             tv.setText(mTitle + "  序号:" + mIndex);
             tv.setGravity(Gravity.CENTER);
-            tv.setBackgroundColor(Color.GREEN);
 
             tv.setHeight(60);
             return tv;

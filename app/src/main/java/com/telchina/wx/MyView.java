@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.Path;
 import android.util.AttributeSet;
 import android.view.View;
 
@@ -25,7 +26,7 @@ public class MyView extends View {
     public MyView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr );
 
-        setBackgroundColor(Color.LTGRAY);
+        setBackgroundColor(Color.WHITE);
     }
 
     @Override
@@ -73,5 +74,30 @@ public class MyView extends View {
 
         //canvas.drawBitmap(Bitmap);
 
+
+        Paint pa=new Paint();
+        pa.setColor(Color.BLACK);
+
+        pa.setStyle(Paint.Style.STROKE);
+        Path path1=new Path();
+        path1.moveTo(180, 200);
+        path1.lineTo(200, 200);
+        path1.lineTo(210, 210);
+        path1.lineTo(200, 220);
+        path1.lineTo(180, 220);
+        path1.lineTo(170, 210);
+        path1.close();
+
+        canvas.drawPath(path1, pa);
+
+        canvas.drawText("画贝塞尔曲线:", 10, 310, pa);
+        pa.reset();
+        pa.setStyle(Paint.Style.STROKE);
+        pa.setColor(Color.GREEN);
+        pa.setStrokeWidth(8);
+        Path path2=new Path();
+        path2.moveTo(100, 320);//设置Path的起点
+        path2.quadTo(150, 310, 170, 400); //设置贝塞尔曲线的控制点坐标和终点坐标
+        canvas.drawPath(path2, pa);
     }
 }
