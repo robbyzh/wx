@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+
+    <attr name="c_icon" format="reference"/>
+    <attr name="c_color" format="color"/>
+    <attr name="c_text" format="string"/>
+    <attr name="c_text_size" format="dimension"/>
+
+    <declare-styleable name="ChangeColorIconWithText">
+        <attr name="c_icon"/>
+        <attr name="c_color"/>
+        <attr name="c_text"/>
+        <attr name="c_text_size"/>
+    </declare-styleable>
+
+</resources>

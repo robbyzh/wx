@@ -1,0 +1,12 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="android:Theme.Holo.Light.DarkActionBar">
+        <item name="android:actionOverflowButtonStyle">@style/wxActionOverflowButton</item>
+    </style>
+
+    <style name="wxActionOverflowButton">
+        <item name="android:src">@mipmap/actionbar_add_icon</item>
+    </style>
+
+</resources>
