@@ -102,7 +102,7 @@ public class MainActivity extends FragmentActivity implements
                 return mTabs.size();
             }
         };
-}
+    }
 
 
     @Override
