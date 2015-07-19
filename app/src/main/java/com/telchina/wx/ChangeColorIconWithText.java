@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
-import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
@@ -49,7 +48,7 @@ public class ChangeColorIconWithText extends View {
     }
 
     /**
-     * 获取自定义属性的值
+     * 获取自定义参数
      */
     public ChangeColorIconWithText(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
@@ -111,7 +110,7 @@ public class ChangeColorIconWithText extends View {
         canvas.drawBitmap(mIconBitMap, null, mIconRect, null);
 
         int alpha = (int) Math.ceil(255 * mAlpha);
-        //在內存中准备mBitmap
+
         setupTargetBitmap(alpha);
 
         drawSourceText(canvas, alpha);
