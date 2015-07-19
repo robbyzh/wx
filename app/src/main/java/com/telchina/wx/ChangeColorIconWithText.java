@@ -36,8 +36,8 @@ public class ChangeColorIconWithText extends View {
 
     private Paint mTextPaint;
 
-    private static final String INSTANCE_STATUS="instance_status";
-    private static final String STATUS_ALPHA="status_alhpa";
+    private static final String INSTANCE_STATUS = "instance_status";
+    private static final String STATUS_ALPHA = "status_alhpa";
 
 
     public ChangeColorIconWithText(Context context) {
@@ -99,10 +99,10 @@ public class ChangeColorIconWithText extends View {
                 getPaddingLeft(), getMeasuredHeight() - getPaddingBottom() -
                 getPaddingTop() - mTextBound.height());
 
-        int left=getMeasuredWidth()/2-iconWidth/2;
-        int top=(getMeasuredHeight()-mTextBound.height())/2-iconWidth/2;
+        int left = getMeasuredWidth() / 2 - iconWidth / 2;
+        int top = (getMeasuredHeight() - mTextBound.height()) / 2 - iconWidth / 2;
 
-        mIconRect=new Rect(left,top,left+iconWidth,top+iconWidth);
+        mIconRect = new Rect(left, top, left + iconWidth, top + iconWidth);
 
     }
 
@@ -110,47 +110,47 @@ public class ChangeColorIconWithText extends View {
     protected void onDraw(Canvas canvas) {
         canvas.drawBitmap(mIconBitMap, null, mIconRect, null);
 
-        int alpha=(int)Math.ceil(255*mAlpha);
+        int alpha = (int) Math.ceil(255 * mAlpha);
         //在內存中准备mBitmap
         setupTargetBitmap(alpha);
 
         drawSourceText(canvas, alpha);
 
-        drawTargetText(canvas,alpha);
+        drawTargetText(canvas, alpha);
 
-        canvas.drawBitmap(mBitmap,0,0,null);
+        canvas.drawBitmap(mBitmap, 0, 0, null);
     }
 
-    private void drawTargetText(Canvas canvas,int alpah){
+    private void drawTargetText(Canvas canvas, int alpah) {
 
         mTextPaint.setColor(mColor);
         mTextPaint.setAlpha(alpah);
 
-        int x=getMeasuredWidth()/2-mTextBound.width()/2;
-        int y=mIconRect.bottom+mTextBound.height();
+        int x = getMeasuredWidth() / 2 - mTextBound.width() / 2;
+        int y = mIconRect.bottom + mTextBound.height();
 
         canvas.drawText(mText, x, y, mTextPaint);
     }
 
-    private void drawSourceText(Canvas canvas,int alpah){
+    private void drawSourceText(Canvas canvas, int alpah) {
 
         mTextPaint.setColor(0xff333333);
-        mTextPaint.setAlpha(255-alpah);
+        mTextPaint.setAlpha(255 - alpah);
 
-        int x=getMeasuredWidth()/2-mTextBound.width()/2;
-        int y=mIconRect.bottom+mTextBound.height();
+        int x = getMeasuredWidth() / 2 - mTextBound.width() / 2;
+        int y = mIconRect.bottom + mTextBound.height();
 
         canvas.drawText(mText, x, y, mTextPaint);
 
     }
 
-    private void setupTargetBitmap(int alpha){
+    private void setupTargetBitmap(int alpha) {
 
-        mBitmap=Bitmap.createBitmap(getMeasuredWidth(),
+        mBitmap = Bitmap.createBitmap(getMeasuredWidth(),
                 getMeasuredHeight(), Bitmap.Config.ARGB_8888);
 
-        mCanvas=new Canvas(mBitmap);
-        mPaint=new Paint();
+        mCanvas = new Canvas(mBitmap);
+        mPaint = new Paint();
         mPaint.setColor(mColor);
         mPaint.setAntiAlias(true);
         mPaint.setDither(true);
@@ -163,36 +163,36 @@ public class ChangeColorIconWithText extends View {
         mCanvas.drawBitmap(mIconBitMap, null, mIconRect, mPaint);
     }
 
-    public void setIconAlpha(float alpha){
+    public void setIconAlpha(float alpha) {
 
-        this.mAlpha=alpha;
+        this.mAlpha = alpha;
         invalidateView();
     }
 
-    private void invalidateView(){
-        if(Looper.getMainLooper()==Looper.myLooper()){
+    private void invalidateView() {
+        if (Looper.getMainLooper() == Looper.myLooper()) {
             invalidate();
-        }else{
+        } else {
             postInvalidate();
         }
     }
 
     @Override
     protected Parcelable onSaveInstanceState() {
-        Bundle bundle=new Bundle();
+        Bundle bundle = new Bundle();
         bundle.putParcelable(INSTANCE_STATUS, super.onSaveInstanceState());
-        bundle.putFloat(STATUS_ALPHA,mAlpha);
+        bundle.putFloat(STATUS_ALPHA, mAlpha);
         return bundle;
     }
 
     @Override
     protected void onRestoreInstanceState(Parcelable state) {
 
-        if(state instanceof Bundle){
-            Bundle bundle=(Bundle)state;
-            mAlpha=bundle.getFloat(STATUS_ALPHA);
+        if (state instanceof Bundle) {
+            Bundle bundle = (Bundle) state;
+            mAlpha = bundle.getFloat(STATUS_ALPHA);
             super.onRestoreInstanceState(bundle.getParcelable(INSTANCE_STATUS));
-        }else{
+        } else {
             super.onRestoreInstanceState(state);
         }
 

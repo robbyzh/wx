@@ -1,4 +1,5 @@
 package com.telchina.wx;
+
 ;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -23,23 +24,23 @@ public class MainActivity extends FragmentActivity implements
 
 
     private ViewPager mViewPager;
-    private List<Fragment> mTabs=new ArrayList<Fragment>();
+    private List<Fragment> mTabs = new ArrayList<Fragment>();
 
-    private String[] mTitles=new String[]{
+    private String[] mTitles = new String[]{
             "第1个Fragment",
             "第2个Fragment",
             "第3个Fragment",
             "第4个Fragment"
     };
 
-    private static final int FIRST_VIEW=0;
-    private static final int SECOND_VIEW=1;
-    private static final int THIRD_VIEW=2;
-    private static final int FORTH_VIEW=3;
+    private static final int FIRST_VIEW = 0;
+    private static final int SECOND_VIEW = 1;
+    private static final int THIRD_VIEW = 2;
+    private static final int FORTH_VIEW = 3;
 
     private FragmentPagerAdapter mAdapter;
 
-    private List<ChangeColorIconWithText> mTabIndicators=new ArrayList<ChangeColorIconWithText>();
+    private List<ChangeColorIconWithText> mTabIndicators = new ArrayList<ChangeColorIconWithText>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,16 +60,16 @@ public class MainActivity extends FragmentActivity implements
         mViewPager.setOnPageChangeListener(this);
     }
 
-    private void initView(){
-        mViewPager=(ViewPager)findViewById(R.id.id_viewpager);
+    private void initView() {
+        mViewPager = (ViewPager) findViewById(R.id.id_viewpager);
 
-        ChangeColorIconWithText one=(ChangeColorIconWithText)findViewById(R.id.id_indicator_one);
+        ChangeColorIconWithText one = (ChangeColorIconWithText) findViewById(R.id.id_indicator_one);
         mTabIndicators.add(one);
-        ChangeColorIconWithText two=(ChangeColorIconWithText)findViewById(R.id.id_indicator_two);
+        ChangeColorIconWithText two = (ChangeColorIconWithText) findViewById(R.id.id_indicator_two);
         mTabIndicators.add(two);
-        ChangeColorIconWithText three=(ChangeColorIconWithText)findViewById(R.id.id_indicator_three);
+        ChangeColorIconWithText three = (ChangeColorIconWithText) findViewById(R.id.id_indicator_three);
         mTabIndicators.add(three);
-        ChangeColorIconWithText four=(ChangeColorIconWithText)findViewById(R.id.id_indicator_four);
+        ChangeColorIconWithText four = (ChangeColorIconWithText) findViewById(R.id.id_indicator_four);
         mTabIndicators.add(four);
 
         //view的onclick事件
@@ -80,18 +81,18 @@ public class MainActivity extends FragmentActivity implements
         one.setIconAlpha(1.0f);
     }
 
-    private void initDatas(){
-        for(String title:mTitles){
-            TabFragment tabFragment=new TabFragment();
+    private void initDatas() {
+        for (String title : mTitles) {
+            TabFragment tabFragment = new TabFragment();
 
-            Bundle bundle=new Bundle();
-            bundle.putString(TabFragment.TITLE,title);
+            Bundle bundle = new Bundle();
+            bundle.putString(TabFragment.TITLE, title);
 
             tabFragment.setArguments(bundle);
             mTabs.add(tabFragment);
         }
 
-        mAdapter=new FragmentPagerAdapter(getSupportFragmentManager()) {
+        mAdapter = new FragmentPagerAdapter(getSupportFragmentManager()) {
             @Override
             public Fragment getItem(int i) {
                 return mTabs.get(i);
@@ -117,13 +118,13 @@ public class MainActivity extends FragmentActivity implements
         return super.onOptionsItemSelected(item);
     }
 
-    private void setOverFlowButtonAlaways(){
+    private void setOverFlowButtonAlaways() {
 
-        ViewConfiguration config=ViewConfiguration.get(this);
+        ViewConfiguration config = ViewConfiguration.get(this);
         try {
-            Field menuKey=ViewConfiguration.class.getDeclaredField("sHasPermanentMenuKey");
+            Field menuKey = ViewConfiguration.class.getDeclaredField("sHasPermanentMenuKey");
             menuKey.setAccessible(true);
-            menuKey.setBoolean(config,false);
+            menuKey.setBoolean(config, false);
 
         } catch (NoSuchFieldException e) {
             e.printStackTrace();
@@ -134,18 +135,18 @@ public class MainActivity extends FragmentActivity implements
     }
 
     @Override
-    public boolean onMenuOpened(int featureId,Menu menu){
+    public boolean onMenuOpened(int featureId, Menu menu) {
 
-        if(featureId== Window.FEATURE_ACTION_BAR&&menu!=null){
+        if (featureId == Window.FEATURE_ACTION_BAR && menu != null) {
 
-            if(menu.getClass().getSimpleName().equals("MenuBuilder")){
-                try{
-                    Method m=menu.getClass().getDeclaredMethod("setOptionalIconsVisible",
+            if (menu.getClass().getSimpleName().equals("MenuBuilder")) {
+                try {
+                    Method m = menu.getClass().getDeclaredMethod("setOptionalIconsVisible",
                             Boolean.TYPE);
                     m.setAccessible(true);
-                    m.invoke(menu,true);
+                    m.invoke(menu, true);
 
-                }catch (Exception e){
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
@@ -155,7 +156,7 @@ public class MainActivity extends FragmentActivity implements
     }
 
     @Override
-    public void onClick(View v){
+    public void onClick(View v) {
 
         tabClick(v);
     }
@@ -163,26 +164,26 @@ public class MainActivity extends FragmentActivity implements
     private void tabClick(View v) {
         resetOtherTabs();
 
-        switch (v.getId()){
+        switch (v.getId()) {
 
             case R.id.id_indicator_one:
                 mTabIndicators.get(FIRST_VIEW).setIconAlpha(1.0f);
-                mViewPager.setCurrentItem(FIRST_VIEW,false);
+                mViewPager.setCurrentItem(FIRST_VIEW, false);
                 break;
 
             case R.id.id_indicator_two:
                 mTabIndicators.get(SECOND_VIEW).setIconAlpha(1.0f);
-                mViewPager.setCurrentItem(SECOND_VIEW,false);
+                mViewPager.setCurrentItem(SECOND_VIEW, false);
                 break;
 
             case R.id.id_indicator_three:
                 mTabIndicators.get(THIRD_VIEW).setIconAlpha(1.0f);
-                mViewPager.setCurrentItem(THIRD_VIEW,false);
+                mViewPager.setCurrentItem(THIRD_VIEW, false);
                 break;
 
             case R.id.id_indicator_four:
                 mTabIndicators.get(FORTH_VIEW).setIconAlpha(1.0f);
-                mViewPager.setCurrentItem(FORTH_VIEW,false);
+                mViewPager.setCurrentItem(FORTH_VIEW, false);
                 break;
         }
     }
@@ -190,7 +191,7 @@ public class MainActivity extends FragmentActivity implements
 
     private void resetOtherTabs() {
 
-        for(int i=0;i<mTabIndicators.size();i++){
+        for (int i = 0; i < mTabIndicators.size(); i++) {
             mTabIndicators.get(i).setIconAlpha(0);
         }
 
@@ -199,19 +200,21 @@ public class MainActivity extends FragmentActivity implements
     @Override
     public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
-        if(positionOffset>0){
-            ChangeColorIconWithText left=mTabIndicators.get(position);
-            ChangeColorIconWithText right=mTabIndicators.get(position+1);
+        if (positionOffset > 0) {
+            ChangeColorIconWithText left = mTabIndicators.get(position);
+            ChangeColorIconWithText right = mTabIndicators.get(position + 1);
 
-            left.setIconAlpha(1-positionOffset);
+            left.setIconAlpha(1 - positionOffset);
             right.setIconAlpha(positionOffset);
         }
     }
 
     @Override
-    public void onPageSelected(int position) {}
+    public void onPageSelected(int position) {
+    }
 
     @Override
-    public void onPageScrollStateChanged(int state) {}
+    public void onPageScrollStateChanged(int state) {
+    }
 
 }

@@ -13,16 +13,16 @@ import android.widget.TextView;
 
 public class TabFragment extends Fragment {
 
-    private String mTitle="Default";
+    private String mTitle = "Default";
 
-    public static final String TITLE="title";
+    public static final String TITLE = "title";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        if(getArguments()!=null){
-            mTitle=getArguments().getString(TITLE);
+        if (getArguments() != null) {
+            mTitle = getArguments().getString(TITLE);
         }
 
         TextView tv = new TextView(getActivity());
