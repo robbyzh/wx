@@ -32,7 +32,7 @@ public class TabFragment extends Fragment {
 
         //第四个标签页显示MyView
         if(mIndex==0){
-            MyView view=new MyView(getActivity());
+            View view=new MyView(getActivity());
 
             return view;
         }else{

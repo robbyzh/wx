@@ -18,7 +18,7 @@ import android.util.TypedValue;
 import android.view.View;
 
 /**
- * ×Ô¶¨ÒåviewÀà
+ * è‡ªå®šä¹‰viewç±»
  */
 public class ChangeColorIconWithText extends View {
 
@@ -52,7 +52,7 @@ public class ChangeColorIconWithText extends View {
     }
 
     /**
-     * »ñÈ¡×Ô¶¨Òå²ÎÊı
+     * è·å–è‡ªå®šä¹‰å‚æ•°
      */
     public ChangeColorIconWithText(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
@@ -124,7 +124,7 @@ public class ChangeColorIconWithText extends View {
         canvas.drawBitmap(mBitmap, 0, 0, null);
     }
 
-    //»æÖÆÒÆ¶¯tabÊ±µÄÄ¿±êÎÄ±¾
+    //ç»˜åˆ¶ç§»åŠ¨tabæ—¶çš„ç›®æ ‡æ–‡æœ¬
     private void drawTargetText(Canvas canvas, int alpah) {
 
         mTextPaint.setColor(mColor);
@@ -136,7 +136,7 @@ public class ChangeColorIconWithText extends View {
         canvas.drawText(mText, x, y, mTextPaint);
     }
 
-    //»æÖÆÒÆ¶¯Ê±µÄÔ´ÎÄ±¾
+    //ç»˜åˆ¶ç§»åŠ¨æ—¶çš„æºæ–‡æœ¬
     private void drawSourceText(Canvas canvas, int alpah) {
 
         mTextPaint.setColor(Color.GRAY);
@@ -149,7 +149,7 @@ public class ChangeColorIconWithText extends View {
     }
 
     /**
-     * »æÖÆÄ¿±êÍ¼Ïñ
+     * ç»˜åˆ¶ç›®æ ‡å›¾åƒ
      * @param alpha
      */
     private void setupTargetBitmap(int alpha) {
@@ -172,7 +172,7 @@ public class ChangeColorIconWithText extends View {
     }
 
     /**
-     * Íâ²¿½Ó¿Ú£¬ÓÃÓÚÔÚ»¬¶¯tabµÄÊ±ºòÉèÖÃviewµÄÍ¸Ã÷¶È£¬À´ÊµÏÖÍ¼ÏñºÍÎÊÌâ±äÉ«
+     * å¤–éƒ¨æ¥å£ï¼Œç”¨äºåœ¨æ»‘åŠ¨tabçš„æ—¶å€™è®¾ç½®viewçš„é€æ˜åº¦ï¼Œæ¥å®ç°å›¾åƒå’Œé—®é¢˜å˜è‰²
      * @param alpha
      */
     public void setIconAlpha(float alpha) {
@@ -182,7 +182,7 @@ public class ChangeColorIconWithText extends View {
     }
 
     /**
-     * ÖØ»æ·½·¨
+     * é‡ç»˜æ–¹æ³•
      */
     private void invalidateView() {
         if (Looper.getMainLooper() == Looper.myLooper()) {
