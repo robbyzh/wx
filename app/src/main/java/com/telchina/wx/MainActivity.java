@@ -1,6 +1,6 @@
 package com.telchina.wx;
 
-import android.graphics.Color;
+import android.content.res.Configuration;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -22,7 +22,6 @@ public class MainActivity extends FragmentActivity implements
         View.OnClickListener,
         ViewPager.OnPageChangeListener {
 
-
     private ViewPager mViewPager;
     private List<Fragment> mTabs = new ArrayList<>();
 
@@ -41,6 +40,7 @@ public class MainActivity extends FragmentActivity implements
     private FragmentPagerAdapter mAdapter;
 
     private List<ChangeColorIconWithText> mTabIndicators = new ArrayList<ChangeColorIconWithText>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,14 +85,14 @@ public class MainActivity extends FragmentActivity implements
     }
 
     private void initDatas() {
-        int i=0;
+        int i = 0;
         for (String title : mTitles) {
 
             TabFragment tabFragment = new TabFragment();
 
             Bundle bundle = new Bundle();
             bundle.putString(TabFragment.TITLE, title);
-            bundle.putInt(TabFragment.INDEX,i++);
+            bundle.putInt(TabFragment.INDEX, i++);
 
             tabFragment.setArguments(bundle);
             mTabs.add(tabFragment);
@@ -221,6 +221,19 @@ public class MainActivity extends FragmentActivity implements
 
     @Override
     public void onPageScrollStateChanged(int state) {
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+
+        if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
+
+        }
+
+        if (newConfig.keyboardHidden == Configuration.KEYBOARDHIDDEN_NO) {
+
+        }
     }
 
 }

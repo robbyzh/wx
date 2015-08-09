@@ -13,4 +13,7 @@
     <string name="tab_found">发现</string>
     <string name="tab_me">我</string>
 
+    <string name="edit_hint_text">键入要发送的内容</string>
+    <string name="send_btn_text">发送</string>
+
 </resources>

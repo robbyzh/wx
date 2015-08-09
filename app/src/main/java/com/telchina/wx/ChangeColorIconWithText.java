@@ -37,7 +37,7 @@ public class ChangeColorIconWithText extends View {
     private Rect        mIconRect;
     private Rect        mTextBound;
 
-    private Paint               mTextPaint;
+    private Paint       mTextPaint;
 
     private static final String INSTANCE_STATUS = "instance_status";
     private static final String STATUS_ALPHA = "status_alhpa";
@@ -205,7 +205,6 @@ public class ChangeColorIconWithText extends View {
 
     @Override
     protected void onRestoreInstanceState(Parcelable state) {
-
         if (state instanceof Bundle) {
             Bundle bundle = (Bundle) state;
             mAlpha = bundle.getFloat(STATUS_ALPHA);
@@ -213,6 +212,5 @@ public class ChangeColorIconWithText extends View {
         } else {
             super.onRestoreInstanceState(state);
         }
-
     }
 }
