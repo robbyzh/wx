@@ -73,7 +73,28 @@ public class NewsTitleFragment extends Fragment implements AdapterView.OnItemCli
         newsList.add(new News("news1news1news1", "news content news content"));
         newsList.add(new News("news2news2news2", "news content news content"));
         newsList.add(new News("news3news3news3", "news content news content"));
-        newsList.add(new News("news4news4news4", "news content news content"));
+        newsList.add(new News("news4news4news4", "news content news content中国" +
+                "news content news content中国" +
+                "news content news content中国" +
+                "news content news content中国" +
+                "news content news content中国" +
+                "news content news content中国" +
+                "news content news content中国" +
+                "news content news content中国" +
+                "news content news content中国" +
+                "news content news content中国" +
+                "news content news content中国" +
+                "news content news content中国" +
+                "news content news content中国" +
+                "news content news content中国" +
+                "news content news content中国" +
+                "news content news content中国" +
+                "news content news content中国" +
+                "news content news content中国" +
+                "news content news content中国" +
+                "news content news content中国" +
+                "news content news content中国" +
+                "news content news content中国"));
 
         return newsList;
     }
