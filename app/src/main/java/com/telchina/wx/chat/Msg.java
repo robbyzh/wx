@@ -1,4 +1,4 @@
-package com.telchina.wx;
+package com.telchina.wx.chat;
 
 /**
  * Created by zg on 2015/8/9.

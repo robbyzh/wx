@@ -1,4 +1,4 @@
-package com.telchina.wx;
+package com.telchina.wx.news;
 
 
 import android.app.Activity;
@@ -10,6 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
+
+import com.telchina.wx.R;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -12,6 +12,10 @@ import android.view.View;
 import android.view.ViewConfiguration;
 import android.view.Window;
 
+import com.telchina.wx.R;
+import com.telchina.wx.base.ChangeColorIconWithText;
+import com.telchina.wx.base.TabFragment;
+
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
@@ -36,6 +40,8 @@ public class MainActivity extends FragmentActivity implements
     private static final int SECOND_VIEW = 1;
     private static final int THIRD_VIEW = 2;
     private static final int FORTH_VIEW = 3;
+
+    public static final String NEWS = "com.telchina.wx.NEWS";
 
     private FragmentPagerAdapter mAdapter;
 
@@ -123,6 +129,8 @@ public class MainActivity extends FragmentActivity implements
 
         if (item.getItemId() == R.id.action_group_news) {
 
+
+            //NewsContentActivity.actionStart(MainActivity.this,);
 
         }
 

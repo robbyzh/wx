@@ -1,4 +1,4 @@
-package com.telchina.wx;
+package com.telchina.wx.test;
 
 import android.content.Context;
 import android.graphics.Canvas;

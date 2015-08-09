@@ -1,6 +1,5 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:hyman="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -17,7 +16,7 @@
         android:background="@drawable/tab_bg"
         android:orientation="horizontal">
 
-        <com.telchina.wx.ChangeColorIconWithText
+        <com.telchina.wx.base.ChangeColorIconWithText
             android:id="@+id/id_indicator_one"
             android:layout_width="0dp"
             android:layout_height="fill_parent"
@@ -28,7 +27,7 @@
             hyman:c_text="@string/app_name"
             hyman:c_text_size="12sp" />
 
-        <com.telchina.wx.ChangeColorIconWithText
+        <com.telchina.wx.base.ChangeColorIconWithText
             android:id="@+id/id_indicator_two"
             android:layout_width="0dp"
             android:layout_height="fill_parent"
@@ -39,7 +38,7 @@
             hyman:c_text="@string/tab_contact"
             hyman:c_text_size="12sp" />
 
-        <com.telchina.wx.ChangeColorIconWithText
+        <com.telchina.wx.base.ChangeColorIconWithText
             android:id="@+id/id_indicator_three"
             android:layout_width="0dp"
             android:layout_height="fill_parent"
@@ -50,7 +49,7 @@
             hyman:c_text="@string/tab_found"
             hyman:c_text_size="12sp" />
 
-        <com.telchina.wx.ChangeColorIconWithText
+        <com.telchina.wx.base.ChangeColorIconWithText
             android:id="@+id/id_indicator_four"
             android:layout_width="0dp"
             android:layout_height="fill_parent"

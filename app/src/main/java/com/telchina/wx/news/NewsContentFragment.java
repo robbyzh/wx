@@ -1,4 +1,4 @@
-package com.telchina.wx;
+package com.telchina.wx.news;
 
 
 import android.app.Fragment;
@@ -7,6 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.telchina.wx.R;
 
 /**
  * Created by zg on 2015/8/9.

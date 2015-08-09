@@ -1,4 +1,4 @@
-package com.telchina.wx;
+package com.telchina.wx.base;
 
 import android.graphics.Color;
 import android.os.Bundle;
@@ -12,6 +12,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import com.telchina.wx.R;
+import com.telchina.wx.chat.Msg;
+import com.telchina.wx.chat.MsgAdapter;
 
 import java.util.ArrayList;
 import java.util.List;

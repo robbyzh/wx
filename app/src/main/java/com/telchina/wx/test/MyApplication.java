@@ -1,4 +1,4 @@
-package com.telchina.wx;
+package com.telchina.wx.test;
 
 import android.app.Application;
 import android.content.res.Configuration;

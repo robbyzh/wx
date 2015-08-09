@@ -1,4 +1,4 @@
-package com.telchina.wx;
+package com.telchina.wx.base;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -16,6 +16,8 @@ import android.os.Parcelable;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.View;
+
+import com.telchina.wx.R;
 
 /**
  * 自定义view类

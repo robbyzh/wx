@@ -1,10 +1,12 @@
-package com.telchina.wx;
+package com.telchina.wx.news;
 
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Window;
+
+import com.telchina.wx.R;
 
 /**
  * Created by zg on 2015/8/9.
