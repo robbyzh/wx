@@ -1,8 +1,8 @@
 package com.telchina.wx.news;
 
 
-import android.app.Fragment;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,16 +10,13 @@ import android.widget.TextView;
 
 import com.telchina.wx.R;
 
-/**
- * Created by zg on 2015/8/9.
- */
 public class NewsContentFragment extends Fragment {
 
     private View view;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.news_content_frag, container, false);
+        view = inflater.inflate(R.layout.news_content_fragment, container, false);
         return view;
     }
 

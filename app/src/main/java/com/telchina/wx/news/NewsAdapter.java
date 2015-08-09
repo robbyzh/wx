@@ -11,13 +11,9 @@ import com.telchina.wx.R;
 
 import java.util.List;
 
-/**
- * Created by zg on 2015/8/9.
- */
 public class NewsAdapter extends ArrayAdapter<News> {
 
     private int resourceId;
-    private TextView newsTitle;
 
     public NewsAdapter(Context context, int textViewResourceId, List<News> objects) {
         super(context, textViewResourceId, objects);
@@ -34,7 +30,8 @@ public class NewsAdapter extends ArrayAdapter<News> {
         } else {
             view = convertView;
         }
-        newsTitle = (TextView) view.findViewById(R.id.news_title);
+
+        TextView newsTitle = (TextView) view.findViewById(R.id.news_title);
         newsTitle.setText(news.getTitle());
         return view;
     }

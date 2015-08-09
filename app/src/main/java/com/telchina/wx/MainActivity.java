@@ -1,5 +1,6 @@
 package com.telchina.wx;
 
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -129,9 +130,8 @@ public class MainActivity extends FragmentActivity implements
 
         if (item.getItemId() == R.id.action_group_news) {
 
-
-            //NewsContentActivity.actionStart(MainActivity.this,);
-
+            Intent intent=new Intent(NEWS);
+            startActivity(intent);
         }
 
         return super.onOptionsItemSelected(item);

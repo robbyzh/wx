@@ -1,8 +1,6 @@
 package com.telchina.wx.news;
 
-/**
- * Created by zg on 2015/8/9.
- */
+
 public class News {
 
     private String title;
