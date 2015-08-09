@@ -5,6 +5,7 @@
     <string name="action_add">添加</string>
 
     <string name="menu_group_chat">发起群聊</string>
+    <string name="menu_group_news">查看新闻</string>
     <string name="menu_feedback">意见反馈</string>
     <string name="menu_addfrends">添加朋友</string>
     <string name="menu_scan">扫一扫</string>

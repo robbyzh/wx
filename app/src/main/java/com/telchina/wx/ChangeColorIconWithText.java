@@ -22,22 +22,22 @@ import android.view.View;
  */
 public class ChangeColorIconWithText extends View {
 
-    private int         mColor = 0xffe;
-    private Bitmap      mIconBitMap;
-    private String      mText;
-    private int         mTextSize = (int) TypedValue.applyDimension(
+    private int mColor = 0xffe;
+    private Bitmap mIconBitMap;
+    private String mText;
+    private int mTextSize = (int) TypedValue.applyDimension(
             TypedValue.COMPLEX_UNIT_SP, 12, getResources().getDisplayMetrics());
 
-    private Canvas      mCanvas;
-    private Bitmap      mBitmap;
-    private Paint       mPaint;
+    private Canvas mCanvas;
+    private Bitmap mBitmap;
+    private Paint mPaint;
 
-    private float       mAlpha;
+    private float mAlpha;
 
-    private Rect        mIconRect;
-    private Rect        mTextBound;
+    private Rect mIconRect;
+    private Rect mTextBound;
 
-    private Paint       mTextPaint;
+    private Paint mTextPaint;
 
     private static final String INSTANCE_STATUS = "instance_status";
     private static final String STATUS_ALPHA = "status_alhpa";
@@ -150,6 +150,7 @@ public class ChangeColorIconWithText extends View {
 
     /**
      * 绘制目标图像
+     *
      * @param alpha
      */
     private void setupTargetBitmap(int alpha) {
@@ -173,6 +174,7 @@ public class ChangeColorIconWithText extends View {
 
     /**
      * 外部接口，用于在滑动tab的时候设置view的透明度，来实现图像和问题变色
+     *
      * @param alpha
      */
     public void setIconAlpha(float alpha) {

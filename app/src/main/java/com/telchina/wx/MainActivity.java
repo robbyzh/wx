@@ -121,6 +121,11 @@ public class MainActivity extends FragmentActivity implements
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
+        if (item.getItemId() == R.id.action_group_news) {
+
+
+        }
+
         return super.onOptionsItemSelected(item);
     }
 

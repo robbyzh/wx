@@ -7,9 +7,9 @@
         android:minSdkVersion="11"
         android:targetSdkVersion="22" />
 
-    <uses-feature 
+    <uses-feature
         android:name="android.hardware.camera2"
-        android:required="true"/>
+        android:required="true" />
 
     <application
         android:allowBackup="true"

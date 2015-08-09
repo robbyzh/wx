@@ -11,6 +11,11 @@
         android:title="@string/action_search" />
 
     <item
+        android:id="@+id/action_group_news"
+        android:icon="@mipmap/menu_group_chat_icon"
+        android:title="@string/menu_group_news" />
+
+    <item
         android:id="@+id/action_group_chat"
         android:icon="@mipmap/menu_group_chat_icon"
         android:title="@string/menu_group_chat" />
