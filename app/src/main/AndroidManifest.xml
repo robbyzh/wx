@@ -29,10 +29,10 @@
 
         <activity
             android:name=".news.NewsContentActivity"
-            android:label="@string/news_content">
-        </activity>
+            android:label="@string/news_content"></activity>
 
-        <activity android:name=".news.NewsListActivity"
+        <activity
+            android:name=".news.NewsListActivity"
             android:label="@string/menu_group_news">
             <intent-filter>
                 <action android:name="com.telchina.wx.NEWS" />

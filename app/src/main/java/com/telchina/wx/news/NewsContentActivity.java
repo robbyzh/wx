@@ -29,8 +29,8 @@ public class NewsContentActivity extends FragmentActivity {
         String newsTitle = getIntent().getStringExtra("news_list");
         String newsContent = getIntent().getStringExtra("news_content");
 
-        FragmentManager fm=getSupportFragmentManager();
-        NewsContentFragment fragment=(NewsContentFragment)fm.findFragmentById(R.id.news_content_fragment);
+        FragmentManager fm = getSupportFragmentManager();
+        NewsContentFragment fragment = (NewsContentFragment) fm.findFragmentById(R.id.news_content_fragment);
         fragment.refresh(newsTitle, newsContent);
     }
 }

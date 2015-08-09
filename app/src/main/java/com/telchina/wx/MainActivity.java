@@ -130,7 +130,7 @@ public class MainActivity extends FragmentActivity implements
 
         if (item.getItemId() == R.id.action_group_news) {
 
-            Intent intent=new Intent(NEWS);
+            Intent intent = new Intent(NEWS);
             startActivity(intent);
         }
 

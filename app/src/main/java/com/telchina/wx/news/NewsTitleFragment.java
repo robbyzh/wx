@@ -18,11 +18,11 @@ import java.util.List;
 
 public class NewsTitleFragment extends Fragment implements AdapterView.OnItemClickListener {
 
-    private ListView    newsTitleListView;
-    private List<News>  newsList;
+    private ListView newsTitleListView;
+    private List<News> newsList;
     private NewsAdapter newsAdapter;
 
-    private Boolean     isTwoPane;
+    private Boolean isTwoPane;
 
     @Override
     public void onAttach(Activity activity) {
