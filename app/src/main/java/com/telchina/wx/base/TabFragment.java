@@ -91,6 +91,5 @@ public class TabFragment extends Fragment implements View.OnClickListener {
             msgListView.setSelection(msgList.size());
             inputText.setText("");
         }
-
     }
 }

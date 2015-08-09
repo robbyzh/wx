@@ -10,7 +10,6 @@ import com.telchina.wx.R;
  */
 public class NewsListActivity extends FragmentActivity {
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
