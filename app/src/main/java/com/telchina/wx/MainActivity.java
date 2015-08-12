@@ -1,5 +1,6 @@
 package com.telchina.wx;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.support.v4.app.Fragment;
@@ -17,6 +18,10 @@ import com.telchina.wx.R;
 import com.telchina.wx.base.ChangeColorIconWithText;
 import com.telchina.wx.base.TabFragment;
 
+import java.io.BufferedWriter;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
@@ -247,6 +252,30 @@ public class MainActivity extends FragmentActivity implements
         if (newConfig.keyboardHidden == Configuration.KEYBOARDHIDDEN_NO) {
 
         }
+    }
+
+    private void save() {
+        String data = "Data to Save";
+        FileOutputStream out = null;
+        BufferedWriter writer = null;
+
+        try {
+            out = openFileOutput("data", Context.MODE_PRIVATE);
+            writer = new BufferedWriter(new OutputStreamWriter(out));
+            writer.write(data);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (writer != null) {
+                    writer.close();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+
     }
 
 }

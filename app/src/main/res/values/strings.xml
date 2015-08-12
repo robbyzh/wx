@@ -19,4 +19,12 @@
 
     <string name="news_content">新闻内容</string>
 
+
+    <string name="login_activity">登录</string>
+    <string name="login_account_label">账号</string>
+    <string name="login_account_hint">请输入您的账号</string>
+    <string name="login_password_label">密码</string>
+    <string name="login_password_hint">请输入您的密码</string>
+    <string name="login_button_label">登录</string>
+
 </resources>
