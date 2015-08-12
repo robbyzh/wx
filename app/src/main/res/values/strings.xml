@@ -27,4 +27,9 @@
     <string name="login_password_hint">请输入您的密码</string>
     <string name="login_button_label">登录</string>
 
+    <string name="force_offline">强制下线</string>
+    <string name="force_offline_button">确定</string>
+    <string name="force_offline_title">警告</string>
+    <string name="force_offline_message">账号在别处登录，系统将强制下线，请尝试重新登录</string>
+
 </resources>

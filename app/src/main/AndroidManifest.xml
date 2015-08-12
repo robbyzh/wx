@@ -11,6 +11,8 @@
         android:name="android.hardware.camera2"
         android:required="true" />
 
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
     <application
         android:name=".test.MyApplication"
         android:allowBackup="true"
@@ -45,6 +47,11 @@
             </intent-filter>
         </activity>
 
+        <receiver android:name=".base.ForceOfflineReceiver">
+            <intent-filter>
+                <action android:name="com.telchina.wx.FORCE_OFFLINE" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

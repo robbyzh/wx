@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
@@ -14,7 +13,7 @@ import android.view.View;
 import android.view.ViewConfiguration;
 import android.view.Window;
 
-import com.telchina.wx.R;
+import com.telchina.wx.base.BaseActivity;
 import com.telchina.wx.base.ChangeColorIconWithText;
 import com.telchina.wx.base.TabFragment;
 
@@ -27,8 +26,7 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
-
-public class MainActivity extends FragmentActivity implements
+public class MainActivity extends BaseActivity implements
         View.OnClickListener,
         ViewPager.OnPageChangeListener {
 
@@ -137,6 +135,10 @@ public class MainActivity extends FragmentActivity implements
 
             Intent intent = new Intent(NEWS);
             startActivity(intent);
+        } else if (item.getItemId() == R.id.action_force_offline) {
+            //强制下线
+            Intent intent = new Intent("com.telchina.wx.FORCE_OFFLINE");
+            sendBroadcast(intent);
         }
 
         return super.onOptionsItemSelected(item);

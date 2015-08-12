@@ -37,13 +37,11 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         String password = passwordEditText.getText().toString();
 
         if ("admin".equals(account) && "123".equals(password)) {
-
             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
             startActivity(intent);
             finish();
         } else {
             Toast.makeText(LoginActivity.this, "wrong", Toast.LENGTH_LONG).show();
         }
-
     }
 }

@@ -35,4 +35,9 @@
         android:icon="@mipmap/menu_feedback_icon"
         android:title="@string/menu_feedback" />
 
+    <item
+        android:id="@+id/action_force_offline"
+        android:icon="@mipmap/menu_add_icon"
+        android:title="@string/force_offline" />
+
 </menu>
