@@ -35,6 +35,7 @@
 
 
     <string name="system_settings_label">系统设置</string>
+    <string name="create_database_button">创建数据库</string>
     <string name="syetem_settings_name">姓名</string>
     <string name="syetem_settings_age">年龄</string>
     <string name="syetem_settings_married">婚否</string>
