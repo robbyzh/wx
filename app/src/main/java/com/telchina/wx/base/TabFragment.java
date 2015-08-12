@@ -1,5 +1,6 @@
 package com.telchina.wx.base;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -61,6 +62,19 @@ public class TabFragment extends Fragment implements View.OnClickListener {
             sendBtn.setOnClickListener(this);
 
             return view;
+        } else if (mIndex == 3) {
+            Button button = new Button(getActivity());
+            button.setText("设置");
+            button.setWidth(100);
+            button.setHeight(100);
+            button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent("com.telchina.wx.SETTINGS");
+                    startActivity(intent);
+                }
+            });
+            return button;
         } else {
             //创建一个TextView
             TextView tv = new TextView(getActivity());

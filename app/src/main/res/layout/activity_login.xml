@@ -2,7 +2,7 @@
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:layout_marginTop="100dp"
     android:stretchColumns="1">
 
     <TableRow>
@@ -28,6 +28,17 @@
             android:layout_height="wrap_content"
             android:hint="@string/login_password_hint"
             android:inputType="textPassword" />
+    </TableRow>
+
+    <TableRow>
+
+        <CheckBox
+            android:id="@+id/login_remember_pass"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:text="@string/login_remember_pass_label" />
     </TableRow>
 
     <TableRow>

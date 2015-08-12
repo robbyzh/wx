@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:stretchColumns="1">
+
+    <TableRow>
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:text="@string/syetem_settings_name" />
+
+        <EditText
+            android:id="@+id/settings_name"
+            android:layout_height="wrap_content" />
+    </TableRow>
+
+    <TableRow>
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:text="@string/syetem_settings_age" />
+
+        <EditText
+            android:id="@+id/settings_age"
+            android:layout_height="wrap_content" />
+    </TableRow>
+
+    <TableRow>
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:text="@string/syetem_settings_married" />
+
+        <CheckBox
+            android:id="@+id/settings_married"
+            android:layout_height="wrap_content" />
+    </TableRow>
+
+</TableLayout>

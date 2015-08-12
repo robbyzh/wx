@@ -52,6 +52,16 @@
                 <action android:name="com.telchina.wx.FORCE_OFFLINE" />
             </intent-filter>
         </receiver>
+
+        <activity
+            android:name=".base.SettingsActivity"
+            android:label="@string/system_settings_label">
+            <intent-filter>
+                <action android:name="com.telchina.wx.SETTINGS" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
     </application>
 
 </manifest>
